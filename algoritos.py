@@ -6,22 +6,17 @@ mo=int(input("mod: "))
 def alg1(n,p,m):
     binar=bin(p)
     binario=binar[2:]
-    lista=[]
     g=0
+    res=1
     for i in range(len(binario)):
         if i==0:
             g=n
-            lista.append(g)
+            if binario[i]=="1":
+                res=res*g
         else:
             g=(g**2)%m
-            lista.append(g)
-    lista2=[]
-    for i in range(len(binario)):
-        if binario[i]=="1":
-            lista2.append(lista[i])     
-    res=1
-    for i in lista2:
-        res=res*i
+            if binario[i]=="1":
+                res=res*g
     return res%m
 
 def alg2(n,p,m):
@@ -37,6 +32,12 @@ def alg3(n,p,m):
         return (alg3(n,p/2,m)**2)%m
     else:
         return (n*alg3(n,(p-1)/2,m)**2)%m
+    
 print(alg1(num,pot,mo))
-print(alg2(num,pot,mo))
+try:
+    print(alg2(num,pot,mo))
+except:
+    print("algoritmo 2 no ejecutado -- maxima recursion alcanzada")
+
 print(alg3(num,pot,mo))
+print((num**pot)%mo)
