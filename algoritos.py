@@ -5,8 +5,7 @@ mo=int(input("mod: "))
 ##ENCONTRAR ERROR
 def alg1(n,p,m):
     binar=bin(p)
-    binario=binar[2:]
-    g=0
+    binario=(binar[2:])[::-1]
     res=1
     for i in range(len(binario)):
         if i==0:
@@ -40,4 +39,4 @@ except:
     print("algoritmo 2 no ejecutado -- maxima recursion alcanzada")
 
 print(alg3(num,pot,mo))
-print((num**pot)%mo)
+##print((num**pot)%mo)
