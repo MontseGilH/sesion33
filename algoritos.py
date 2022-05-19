@@ -2,7 +2,7 @@ num=int(input("numero: "))
 pot=int(input("potencia: "))
 mo=int(input("mod: "))
 
-##ENCONTRAR ERROR
+
 def alg1(n,p,m):
     binar=bin(p)
     binario=(binar[2:])[::-1]
